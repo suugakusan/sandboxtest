@@ -9,8 +9,21 @@ const onClickAdd = () => {
 
   const li = document.createElement("li");
   li.innerText = inputText;
+
+  const compButton = document.createElement("button");
+  compButton.innerText = "完了";
+  compButton.addEventListener("click", () => {
+    alert("完了");
+  });
+  const deleButton = document.createElement("button");
+  deleButton.innerText = "削除";
+  deleButton.addEventListener("click", () => {
+    alert("削除");
+  });
+
   div.appendChild(li);
-  console.log(div);
+  div.appendChild(compButton);
+  div.appendChild(deleButton);
 
   document.getElementById("imcomp-list").appendChild(div);
 };
