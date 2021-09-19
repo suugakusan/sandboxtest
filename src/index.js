@@ -13,8 +13,25 @@ const onClickAdd = () => {
   const compButton = document.createElement("button");
   compButton.innerText = "完了";
   compButton.addEventListener("click", () => {
-    alert("完了");
+    const deleteTarget = compButton.parentNode;
+    document.getElementById("imcomp-list").removeChild(deleteTarget);
+    const addTarget = compButton.parentNode;
+
+    const text = addTarget.firstElementChild.innerText;
+
+    addTarget.textContent = null;
+
+    const li = document.createElement("li");
+    li.innerText = text;
+
+    const backButton = document.createElement("button");
+    backButton.innerText = "戻す";
+
+    addTarget.appendChild(li);
+    addTarget.appendChild(backButton);
+    document.getElementById("comp-list").appendChild(addTarget);
   });
+
   const deleButton = document.createElement("button");
   deleButton.innerText = "削除";
   deleButton.addEventListener("click", () => {
