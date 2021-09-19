@@ -18,7 +18,8 @@ const onClickAdd = () => {
   const deleButton = document.createElement("button");
   deleButton.innerText = "削除";
   deleButton.addEventListener("click", () => {
-    alert("削除");
+    const deleteTarget = deleButton.parentNode;
+    document.getElementById("imcomp-list").removeChild(deleteTarget);
   });
 
   div.appendChild(li);
